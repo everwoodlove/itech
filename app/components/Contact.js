@@ -1,12 +1,13 @@
-var React = require('react');
+const React = require('react');
 
-var FormGroup = require('react-bootstrap/lib/FormGroup');
-var FormControl = require('react-bootstrap/lib/FormControl');
-var ControlLabel = require('react-bootstrap/lib/ControlLabel');
-var Col = require('react-bootstrap/lib/Col');
-var Button = require('react-bootstrap/lib/Button');
+const FormGroup = require('react-bootstrap/lib/FormGroup');
+const FormControl = require('react-bootstrap/lib/FormControl');
+const ControlLabel = require('react-bootstrap/lib/ControlLabel');
+const Col = require('react-bootstrap/lib/Col');
+const Button = require('react-bootstrap/lib/Button');
+const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar')
 
-var Contact = React.createClass({
+const Contact = React.createClass({
     getInitialState() {
         return {
             value: ''
@@ -14,63 +15,80 @@ var Contact = React.createClass({
     },
 
     render() {
+
         return (
             <Col xs={12} md={12} style={{backgroundColor: this.props.backgroundColor}}>
-                <div>
-                    <h1 style={{textAlign: 'center'}}>Contact Us</h1>
-                    <Col xs={3} md={2}/>
+                <h1 style={{textAlign: 'center'}}>
+                    Contact Us
+                </h1>
 
-                    <Col sm={12} md={8}>
-                        <form>
-                            <FormGroup
-                                controlId="formBasicText"
-                            >
-                                <Col sm={12} md={8}>
-                                    <Col xs={4} md={2}>
-                                        <ControlLabel>Name:</ControlLabel>
-                                    </Col>
-                                    <Col xs={8} md={8}>
-                                        <FormControl
-                                            type="text"
-                                            value={this.state.value}
-                                        />
-                                    </Col>
-                                </Col>
+                <Col md={8} mdOffset={2}>
+                    <form>
+                        <FormGroup controlId="formBasicText">
+                            <Col md={6}>
+                                <ControlLabel>
+                                    <h4>First Name</h4>
+                                </ControlLabel>
+                                <FormControl
+                                    type="text"
+                                    placeholder="First Name"
+                                    value={this.state.value}
+                                />
+                            </Col>
 
+                            <Col md={6}>
+                                <ControlLabel>
+                                    <h4>Last Name</h4>
+                                </ControlLabel>
+                                <FormControl
+                                    type="text"
+                                    placeholder="Last Name"
+                                    value={this.state.value}
+                                />
+                            </Col>
+                            <Col md={6}>
+                                <ControlLabel>
+                                    <h4>Email Address</h4>
+                                </ControlLabel>
+                                <FormControl
+                                    type="text"
+                                    placeholder="Email Address"
+                                    value={this.state.value}
+                                />
+                            </Col>
 
-                                <Col sm={12} md={8}>
-                                    <Col xs={4} md={2}>
-                                        <ControlLabel>Email:</ControlLabel>
-                                    </Col>
-                                    <Col xs={8} md={8}>
-                                        <FormControl
-                                            type="text"
-                                            value={this.state.value}
-                                        />
-                                    </Col>
-                                </Col>
+                            <Col md={6}>
+                                <ControlLabel>
+                                    <h4>Phone Number</h4>
+                                </ControlLabel>
+                                <FormControl
+                                    type="text"
+                                    placeholder="Phone Number"
+                                    value={this.state.value}
+                                />
+                            </Col>
 
-                                <Col sm={12} md={8}>
-                                    <Col xs={4} md={2}>
-                                        <ControlLabel>Message:</ControlLabel>
-                                    </Col>
-                                    <Col xs={8} md={8}>
-                                        <FormControl
-                                            type="text"
-                                            value={this.state.value}
-                                        />
-                                    </Col>
-                                </Col>
-                                <FormControl.Feedback />
-                            </FormGroup>
-                        </form>
+                            <Col md={12}>
+                                <ControlLabel>
+                                    <h4>Message</h4>
+                                </ControlLabel>
+                                <FormControl
+                                    componentClass="textarea"
+                                    placeholder="Enter your feedback, message, or issue"
+                                    value={this.state.value}
+                                />
+                            </Col>
+
+                            <FormControl.Feedback />
+
+                        </FormGroup>
+                    </form>
+                    <Col xs={8} md={6} mdOffset={3}>
+                        <Button bsStyle="primary" type="submit" block style={{marginTop: 20}}>
+                            Send Your Message
+                        </Button>
                     </Col>
-
-                    <Col xs={3} md={2}/>
-                </div>
-                <div>
-                    <Button bsStyle="primary" type="submit"> Submit </Button>
-                </div>
+                </Col>
             </Col>
         );
     }

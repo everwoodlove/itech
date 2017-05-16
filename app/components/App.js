@@ -1,19 +1,19 @@
-var React = require('react');
-var NavBar = require('./NavBar');
-var Marquee = require('./Marquee');
-var Contact = require('./Contact');
-var Features = require('./features');
+const React = require('react');
+const NavBar = require('./NavBar');
+const Marquee = require('./Marquee');
+const Contact = require('./Contact');
+const Features = require('./Features');
 
-var backgroundImage = require('../static/assets/meeting.jpg');
+const backgroundImage = require('../static/photos/meeting.jpg');
 
-var App = React.createClass({
+const App = React.createClass({
     render() {
         return (
             <div>
                 <NavBar />
                 <Marquee backgroundImage={backgroundImage}/>
                 <Features />
-                <Contact backgroundColor='lightblue'/>
+                <Contact backgroundColor="#efefef"/>
             </div>
         );
     }
